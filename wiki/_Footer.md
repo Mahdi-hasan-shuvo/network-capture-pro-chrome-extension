@@ -1,0 +1,1 @@
+_Network Capture Pro · MIT License · [Repo](https://github.com/<your-username>/network-capture-pro-chrome-extension) · [Issues](https://github.com/<your-username>/network-capture-pro-chrome-extension/issues) · [Discussions](https://github.com/<your-username>/network-capture-pro-chrome-extension/discussions) · ⭐ a star helps a lot_
