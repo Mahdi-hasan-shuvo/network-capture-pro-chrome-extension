@@ -277,6 +277,12 @@ Built with caffeine, vanilla JavaScript, and the Chrome DevTools Protocol.
 If this saved you a debugging afternoon, please ⭐ the repo — it really does help others find it.
 
 ---
+# Damo
+
+
+https://github.com/user-attachments/assets/136cc793-11bb-414d-b2f3-030d36b40da3
+
+
 
 <div align="center">
 
