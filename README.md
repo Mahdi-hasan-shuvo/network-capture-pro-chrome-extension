@@ -289,3 +289,15 @@ https://github.com/user-attachments/assets/136cc793-11bb-414d-b2f3-030d36b40da3
 **Made for developers, security researchers, QA engineers, and anyone who has ever wished DevTools had a "save everything" button.**
 
 </div>
+
+## 📬 Contact
+
+Have a question, found a bug, or want to collaborate on a paid project?
+
+| | |
+|---|---|
+| 📩 **Email** | [shuvobbhh@gmail.com](mailto:shuvobbhh@gmail.com) |
+| 💬 **WhatsApp** | [+8801616397082](https://wa.me/8801616397082) |
+| 🌐 **Portfolio / Website** | [mahdi-hasan-shuvo.github.io](https://mahdi-hasan-shuvo.github.io/) |
+
+---
