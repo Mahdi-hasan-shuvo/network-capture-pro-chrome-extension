@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Network Capture Pro",
+  "version": "1.1.0",
+  "description": "Capture every network request — URL, headers, cookies, params, post body, response headers/cookies/body — and download as ZIP / JSON / HAR / CSV with one click.",
+  "permissions": [
+    "debugger",
+    "storage",
+    "downloads",
+    "activeTab",
+    "tabs",
+    "cookies",
+    "offscreen",
+    "scripting",
+    "webNavigation",
+    "browsingData"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Network Capture Pro"
+  },
+  "devtools_page": "devtools.html",
+  "minimum_chrome_version": "116"
+}

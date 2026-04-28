@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Network Capture Pro</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; font: 13px/1.4 -apple-system, "Segoe UI", Roboto, sans-serif; color: #e6e6e6; background: #181a20; }
+    .top { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #21232b; border-bottom: 1px solid #2a2d36; }
+    .top .title { font-weight: 700; flex: 0 0 auto; }
+    .top .stats { display: flex; gap: 16px; flex: 1; color: #a8b1bd; font-size: 12px; }
+    .stat b { color: #fff; }
+    .btn { background: #2a2e38; border: 1px solid #353945; color: #e6e6e6; border-radius: 5px; padding: 6px 10px; font-size: 12px; cursor: pointer; }
+    .btn:hover { background: #333845; }
+    .btn.primary { background: #2c7be5; border-color: #2c7be5; }
+    .btn.rec { background: #b73a2c; border-color: #d84a3b; }
+    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .filter { display: flex; gap: 6px; padding: 8px 12px; border-bottom: 1px solid #2a2d36; background: #1d1f27; }
+    .filter input, .filter select { background: #14161c; color: #e6e6e6; border: 1px solid #2f3340; border-radius: 5px; padding: 6px 8px; font-size: 12px; }
+    .filter input { flex: 1; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 110px); overflow: hidden; }
+    .list { overflow: auto; border-right: 1px solid #2a2d36; }
+    table { width: 100%; border-collapse: collapse; font-family: ui-monospace, Consolas, monospace; font-size: 11.5px; }
+    th { position: sticky; top: 0; background: #21232b; text-align: left; padding: 6px 8px; font-size: 11px; color: #a8b1bd; border-bottom: 1px solid #2a2d36; }
+    td { padding: 5px 8px; border-bottom: 1px solid #1d1f27; cursor: pointer; }
+    tr:hover td { background: #1f222b; }
+    tr.sel td { background: #2c4163; }
+    .ok { color: #3ddc84; } .err { color: #ff7a6c; } .warn { color: #f1c40f; }
+    .detail { overflow: auto; padding: 12px; }
+    .tabs { display: flex; gap: 4px; margin-bottom: 8px; border-bottom: 1px solid #2a2d36; }
+    .tab { padding: 6px 10px; cursor: pointer; color: #a8b1bd; font-size: 12px; border-bottom: 2px solid transparent; }
+    .tab.active { color: #fff; border-color: #2c7be5; }
+    pre { white-space: pre-wrap; word-break: break-all; background: #14161c; padding: 10px; border-radius: 5px; font-size: 11.5px; color: #d0d6e0; }
+    .kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-family: ui-monospace, Consolas, monospace; font-size: 11.5px; }
+    .kv .k { color: #8d96a4; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="title">Network Capture Pro</div>
+    <div class="stats">
+      <span class="stat">Status: <b id="status">Idle</b></span>
+      <span class="stat">Requests: <b id="count">0</b></span>
+      <span class="stat">Bytes: <b id="bytes">0</b></span>
+      <span class="stat">Elapsed: <b id="timer">00:00</b></span>
+      <span class="stat">Tab: <b id="tab">-</b></span>
+    </div>
+    <button id="startBtn" class="btn rec">Start</button>
+    <button id="pauseBtn" class="btn" disabled>Pause</button>
+    <button id="stopBtn"  class="btn" disabled>Stop</button>
+    <button id="clearBtn" class="btn">Clear</button>
+    <button id="dlZip"    class="btn primary">⬇ ZIP</button>
+    <button id="dlJson"   class="btn">JSON</button>
+    <button id="dlHar"    class="btn">HAR</button>
+    <button id="dlCsv"    class="btn">CSV</button>
+  </div>
+  <div class="top" style="border-top:1px solid #2a2d36">
+    <span style="color:#8d96a4">Target:</span>
+    <a id="targetUrl" href="#" style="flex:1;color:#5aa9ff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Open / focus this tab">-</a>
+    <button id="openSite"     class="btn">Open / focus</button>
+    <button id="reloadSite"   class="btn">Reload</button>
+    <button id="hardReload"   class="btn">Hard reload</button>
+    <button id="clearCookies" class="btn" style="background:#6b4d12;border-color:#8a6519">Clear cookies</button>
+    <button id="clearCache"   class="btn" style="background:#6b4d12;border-color:#8a6519">Clear cache</button>
+  </div>
+  <div class="filter">
+    <input id="filter" placeholder="Filter URL / method / status / mime…">
+    <select id="typeFilter"><option value="">All types</option>
+      <option>XHR</option><option>Fetch</option><option>Document</option><option>Script</option>
+      <option>Stylesheet</option><option>Image</option><option>Media</option><option>Font</option>
+      <option>WebSocket</option><option>Other</option></select>
+    <select id="methodFilter"><option value="">All methods</option>
+      <option>GET</option><option>POST</option><option>PUT</option><option>DELETE</option>
+      <option>PATCH</option><option>OPTIONS</option><option>HEAD</option></select>
+  </div>
+  <div class="grid">
+    <div class="list">
+      <table>
+        <thead><tr>
+          <th>#</th><th>Method</th><th>Status</th><th>Type</th><th>Host</th><th>Path</th><th>Time</th><th>Bytes</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="detail" id="detail">
+      <em style="color:#8d96a4">Pick a request from the list to see its full details — headers, cookies, params, post body, response headers, response cookies, response body.</em>
+    </div>
+  </div>
+  <script src="panel.js"></script>
+</body>
+</html>

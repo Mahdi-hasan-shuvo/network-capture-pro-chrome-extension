@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="hdr">
+    <div class="brand">
+      <span class="dot" id="dot"></span>
+      <span class="name">Network Capture Pro</span>
+      <span class="ver" id="ver"></span>
+    </div>
+    <div class="status" id="status">Idle</div>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><span class="lbl">Requests</span><span class="val" id="count">0</span></div>
+    <div class="stat"><span class="lbl">Elapsed</span><span class="val" id="timer">00:00</span></div>
+    <div class="stat"><span class="lbl">Data</span><span class="val" id="bytes">0 B</span></div>
+    <div class="stat"><span class="lbl">Started</span><span class="val" id="startedAt">-</span></div>
+  </section>
+
+  <section class="controls">
+    <button id="startBtn" class="btn rec">● Start</button>
+    <button id="pauseBtn" class="btn" disabled>‖ Pause</button>
+    <button id="stopBtn"  class="btn stop" disabled>■ Stop</button>
+    <button id="clearBtn" class="btn ghost">Clear</button>
+  </section>
+
+  <section class="dlrow">
+    <div class="dlrow-title">Download</div>
+    <div class="dlrow-buttons">
+      <button id="dlZip"  class="btn primary">⬇ ZIP (per-request files)</button>
+      <button id="dlJson" class="btn">⬇ JSON</button>
+      <button id="dlHar"  class="btn">⬇ HAR</button>
+      <button id="dlCsv"  class="btn">⬇ CSV</button>
+    </div>
+  </section>
+
+  <section class="dlrow">
+    <div class="dlrow-title">Target site</div>
+    <div class="targetbox">
+      <span class="targetlbl">Site:</span>
+      <a id="targetUrl" class="link tgt" href="#" title="Click to open / focus this tab">-</a>
+    </div>
+    <div class="dlrow-buttons">
+      <button id="openSite"   class="btn">Open / focus tab</button>
+      <button id="reloadSite" class="btn">Reload</button>
+      <button id="hardReload" class="btn">Hard reload</button>
+    </div>
+    <div class="dlrow-buttons">
+      <button id="clearCookies" class="btn warn">Clear cookies</button>
+      <button id="clearCache"   class="btn warn">Clear cache</button>
+    </div>
+  </section>
+
+  <section class="filterbar">
+    <input id="filter" placeholder="Filter URL / method / status…" />
+    <select id="typeFilter">
+      <option value="">All types</option>
+      <option>XHR</option><option>Fetch</option><option>Document</option>
+      <option>Script</option><option>Stylesheet</option><option>Image</option>
+      <option>Media</option><option>Font</option><option>WebSocket</option>
+      <option>Other</option>
+    </select>
+    <select id="methodFilter">
+      <option value="">All methods</option>
+      <option>GET</option><option>POST</option><option>PUT</option>
+      <option>DELETE</option><option>PATCH</option><option>OPTIONS</option><option>HEAD</option>
+    </select>
+  </section>
+
+  <section class="list" id="list"></section>
+
+  <footer class="ftr">
+    <span class="hint">Tab: <span id="tabHost">-</span></span>
+    <a id="openPanel" href="#" class="link">Open full panel ↗</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
