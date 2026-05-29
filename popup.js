@@ -272,3 +272,4 @@ timerHandle = setInterval(() => {
 }, 1000);
 
 window.addEventListener('unload', () => { if (timerHandle) clearInterval(timerHandle); });
+
