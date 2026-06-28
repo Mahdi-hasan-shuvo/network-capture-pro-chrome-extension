@@ -1,7 +1,6 @@
 // Minimal ZIP writer (STORE method, no compression).
 // Exposes globalThis.NCPZip = { create(files) -> Uint8Array }
 // files: Array<{name: string, data: Uint8Array}>
-
 (function () {
   let crcTable = null;
   function buildCrcTable() {
