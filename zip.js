@@ -77,7 +77,6 @@
       cdv.setUint32(42, offset, true);
       ch.set(nameBytes, 46);
       central.push(ch);
-
       offset += lh.length + size;
     }
 
