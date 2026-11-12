@@ -1,0 +1,74 @@
+name: 🐛 Bug report
+description: Something isn't working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug! Please fill in as much as you can.
+        ⚠️ **Do not paste capture archives, cookies, or auth tokens here** — redact sensitive data first.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+      placeholder: When I click ⬇ ZIP after capturing, nothing downloads…
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce it?
+      placeholder: |
+        1. Open '...'
+        2. Press ● Start
+        3. Do '...'
+        4. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did it happen?
+      options:
+        - Toolbar popup
+        - Full panel
+        - DevTools tab
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: chrome-version
+    attributes:
+      label: Chrome / browser version
+      description: "Find it at chrome://version (must be 116+)"
+      placeholder: "Chrome 131.0.6778.86"
+    validations:
+      required: true
+  - type: input
+    id: ext-version
+    attributes:
+      label: Extension version
+      description: Shown next to the name in the popup (e.g. v1.1.0)
+      placeholder: "v1.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant console logs
+      description: "Service worker / popup / offscreen console output (redact anything sensitive). This is auto-formatted as code."
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I reloaded the extension (↻ on the card) after any update
+          required: true
+        - label: I confirmed DevTools was not already attached to the same tab
+          required: true
+        - label: I removed any sensitive data from this report
+          required: true

@@ -4,7 +4,7 @@ Hey there — and thank you for stopping by! 👋
 
 **Network Capture Pro** is a zero-dependency Chrome extension that captures every network request on any tab — full URLs, every header, every cookie, every query param, every POST body, every response body — and exports the whole session as a one-click ZIP / JSON / HAR / CSV.
 
-This wiki is the **complete handbook** for the project — you'll find install guides, deep technical docs, FAQs, troubleshooting, and the public roadmap here. The [README](https://github.com/<your-username>/network-capture-pro-chrome-extension#readme) is the marketing front door; this wiki is the engineering manual.
+This wiki is the **complete handbook** for the project — you'll find install guides, deep technical docs, FAQs, troubleshooting, and the public roadmap here. The [README](https://github.com/Mahdi-hasan-shuvo/network-capture-pro-chrome-extension#readme) is the marketing front door; this wiki is the engineering manual.
 
 ---
 

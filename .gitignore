@@ -1,0 +1,30 @@
+# Build artifacts / packaged extension
+*.zip
+dist/
+build/
+
+# Dependencies (this project intentionally has none — guard anyway)
+node_modules/
+
+# Local tooling
+.code-review-graph/
+docs/superpowers/
+
+# Secrets / local config — never commit
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

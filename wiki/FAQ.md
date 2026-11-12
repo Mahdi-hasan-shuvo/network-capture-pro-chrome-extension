@@ -129,4 +129,4 @@ Yes. The extension itself runs offline. (Naturally, you'll only have something t
 
 ---
 
-Have a question that isn't here? Open a [Discussion](https://github.com/<your-username>/network-capture-pro-chrome-extension/discussions/categories/q-a) — happy to add it.
+Have a question that isn't here? Open a [Discussion](https://github.com/Mahdi-hasan-shuvo/network-capture-pro-chrome-extension/discussions/categories/q-a) — happy to add it.

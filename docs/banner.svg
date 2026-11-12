@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4285F4"/>
+      <stop offset="1" stop-color="#34a853"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- subtle grid -->
+  <g stroke="#1c2942" stroke-width="1" opacity="0.6">
+    <line x1="0" y1="160" x2="1280" y2="160"/>
+    <line x1="0" y1="320" x2="1280" y2="320"/>
+    <line x1="0" y1="480" x2="1280" y2="480"/>
+  </g>
+
+  <!-- accent bar -->
+  <rect x="96" y="150" width="88" height="8" rx="4" fill="url(#accent)"/>
+
+  <!-- globe glyph -->
+  <g transform="translate(1000,150)" stroke="#4285F4" stroke-width="6" fill="none" opacity="0.9">
+    <circle cx="90" cy="90" r="90"/>
+    <ellipse cx="90" cy="90" rx="42" ry="90"/>
+    <line x1="0" y1="90" x2="180" y2="90"/>
+    <line x1="14" y1="45" x2="166" y2="45"/>
+    <line x1="14" y1="135" x2="166" y2="135"/>
+  </g>
+
+  <!-- title -->
+  <text x="96" y="250" fill="#ffffff" font-size="88" font-weight="800">Network Capture Pro</text>
+
+  <!-- tagline -->
+  <text x="96" y="312" fill="#aab6cc" font-size="34" font-weight="400">Capture every network request — export as ZIP · JSON · HAR · CSV in one click.</text>
+
+  <!-- format chips -->
+  <g font-size="28" font-weight="700">
+    <g transform="translate(96,372)">
+      <rect width="130" height="58" rx="12" fill="#17233b" stroke="#2a3a5c"/>
+      <text x="65" y="38" fill="#4285F4" text-anchor="middle">ZIP</text>
+    </g>
+    <g transform="translate(246,372)">
+      <rect width="150" height="58" rx="12" fill="#17233b" stroke="#2a3a5c"/>
+      <text x="75" y="38" fill="#34a853" text-anchor="middle">JSON</text>
+    </g>
+    <g transform="translate(416,372)">
+      <rect width="140" height="58" rx="12" fill="#17233b" stroke="#2a3a5c"/>
+      <text x="70" y="38" fill="#fbbc05" text-anchor="middle">HAR</text>
+    </g>
+    <g transform="translate(576,372)">
+      <rect width="140" height="58" rx="12" fill="#17233b" stroke="#2a3a5c"/>
+      <text x="70" y="38" fill="#ea4335" text-anchor="middle">CSV</text>
+    </g>
+  </g>
+
+  <!-- feature line -->
+  <text x="96" y="492" fill="#8595b0" font-size="26">Headers · Cookies · Query params · POST body · Response body · WebSocket frames</text>
+
+  <!-- badges row -->
+  <g font-size="24" font-weight="600" fill="#c7d2e6">
+    <text x="96" y="556">Manifest V3</text>
+    <circle cx="300" cy="548" r="4" fill="#4285F4"/>
+    <text x="324" y="556">Chrome 116+</text>
+    <circle cx="540" cy="548" r="4" fill="#4285F4"/>
+    <text x="564" y="556">Zero dependencies</text>
+    <circle cx="840" cy="548" r="4" fill="#4285F4"/>
+    <text x="864" y="556">100% local · no telemetry</text>
+  </g>
+
+  <!-- footer author -->
+  <text x="96" y="604" fill="#5e6e8c" font-size="22">github.com/Mahdi-hasan-shuvo/network-capture-pro-chrome-extension · MIT License</text>
+</svg>

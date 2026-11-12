@@ -5,7 +5,7 @@ There are two ways to install Network Capture Pro:
 ## 🅐 From source (recommended for now)
 
 ```bash
-git clone https://github.com/<your-username>/network-capture-pro-chrome-extension.git
+git clone https://github.com/Mahdi-hasan-shuvo/network-capture-pro-chrome-extension.git
 ```
 
 1. Open Chrome and visit `chrome://extensions`

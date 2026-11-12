@@ -5,7 +5,7 @@ Want to hack on the source? Here's everything you need.
 ## Setup
 
 ```bash
-git clone https://github.com/<your-username>/network-capture-pro-chrome-extension.git
+git clone https://github.com/Mahdi-hasan-shuvo/network-capture-pro-chrome-extension.git
 cd network-capture-pro-chrome-extension
 ```
 
